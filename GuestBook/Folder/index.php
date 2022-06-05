@@ -1,5 +1,6 @@
 <?php
 error_reporting(-1);
+session_start();
 
 require_once __DIR__ . '/db.php';
 require_once __DIR__ . '/funcs.php';
@@ -21,15 +22,24 @@ require_once __DIR__ . '/funcs.php';
 
     <div class="row my-3">
         <div class="col">
+            <?php if (!empty($_SESSION['errors'])): ?>
             <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                Errors...
+                <?php 
+                echo $_SESSION['errors'];
+                unset($_SESSION['errors']);
+                ?>
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
-
+            <?php endif; ?>   
+            <?php if (!empty($_SESSION['success'])): ?>
             <div class="alert alert-success alert-dismissible fade show" role="alert">
-                Success...
+            <?php 
+                echo $_SESSION['success'];
+                unset($_SESSION['success']);
+                ?>
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
+            <?php endif; ?> 
         </div>
     </div>
 
