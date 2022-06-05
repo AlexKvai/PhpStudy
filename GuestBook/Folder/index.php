@@ -4,6 +4,13 @@ session_start();
 
 require_once __DIR__ . '/db.php';
 require_once __DIR__ . '/funcs.php';
+
+if (isset($_POST['register'])) {
+   registration();
+   header("Location: index.php");
+   die;
+}
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -43,12 +50,13 @@ require_once __DIR__ . '/funcs.php';
         </div>
     </div>
 
-
+    <?php if (empty($_SESSION['user']['name'])): ?>
     <div class="row">
         <div class="col-md-6 offset-md-3">
             <h3>Регистрация</h3>
         </div>
     </div>
+  
 
     <form action="index.php" method="post" class="row g-3">
         <div class="col-md-6 offset-md-3">
@@ -98,12 +106,14 @@ require_once __DIR__ . '/funcs.php';
         </div>
     </form>
 
+    
+    <?php else: ?>
+
     <div class="row">
         <div class="col-md-6 offset-md-3">
             <p>Добро пожаловать, User! <a href="?do=exit">Log out</a></p>
         </div>
     </div>
-
 
     <form action="index.php" method="post" class="row g-3 mb-5">
         <div class="col-md-6 offset-md-3">
@@ -118,7 +128,7 @@ require_once __DIR__ . '/funcs.php';
             <button type="submit" name="add" class="btn btn-primary">Отправить</button>
         </div>
     </form>
-
+    <?php endif; ?>
 
     <div class="row">
         <div class="col-md-6 offset-md-3">
