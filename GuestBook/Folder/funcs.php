@@ -47,7 +47,7 @@ function login(): bool
 
     $res = $pdo->prepare("SELECT * FROM users WHERE login =?");
     $res->execute([$login]);
-    if (!$user = $res->fetchColumn()) {
+    if (!$user = $res->fetch()) {
       $_SESSION['errors'] = 'Fields entered incorrectly';
       return false;
     } 
