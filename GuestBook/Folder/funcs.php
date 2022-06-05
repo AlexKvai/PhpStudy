@@ -34,4 +34,36 @@ function registration(): bool
 
 }
 
+function login(): bool 
+{
+    global $pdo;
+    $login = !empty($_POST['login']) ? trim($_POST['login']) : '';
+    $pass = !empty($_POST['pass']) ? trim($_POST['pass']) : '';
+
+    if (empty($login) || empty($pass)) {
+      $_SESSION['errors'] = 'Fields login/pass required';
+      return false;
+    }
+
+    $res = $pdo->prepare("SELECT * FROM users WHERE login =?");
+    $res->execute([$login]);
+    if (!$user = $res->fetchColumn()) {
+      $_SESSION['errors'] = 'Fields entered incorrectly';
+      return false;
+    } 
+
+    if (!password_verify($pass, $user['pass'])) {
+      $_SESSION['errors'] = 'Fields entered incorrectly';
+      return false;
+    } else {
+      $_SESSION['success'] = 'You success auth';
+      $_SESSION['user']['name'] = $user['login'];
+      $_SESSION['user']['id'] = $user['id'];
+      return true;
+    }
+
+
+
+}
+
 ?>
