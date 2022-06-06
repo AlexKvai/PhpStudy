@@ -7,4 +7,5 @@
   echo $car1->Test();
   echo $car1->getPrototypeInfo();
   echo Car::TEST_CAR;
+  echo Car::class;
 ?>
