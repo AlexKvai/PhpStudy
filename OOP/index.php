@@ -3,9 +3,8 @@ require_once 'classes/MyFirstClass.php';
 require_once 'classes/Car.php';
 
 
-$car = new Car();
-$car->color = 'black';
-$car->brand = 'volvo';
+$car = new Car('black', 4, 180, 'bmw');
+
 
 
 echo $car->getCarInfo();

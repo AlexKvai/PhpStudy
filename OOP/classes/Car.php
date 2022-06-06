@@ -2,10 +2,18 @@
 class Car 
 {
   public $color;
-  public $wheels = 4;
-  public $speed = 180;
+  public $wheels;
+  public $speed;
   public $brand;
 
+  public function __construct($color, $wheels, $speed, $brand)
+  {
+    $this->color = $color;
+    $this->wheels = $wheels;
+    $this->speed = $speed;
+    $this->brand = $brand;
+  }
+ 
   function getCarInfo() {
     return "<h3>О моём авто:</h3>
     Марка: {$this->brand} <br>
@@ -13,6 +21,11 @@ class Car
     Цвет: {$this->color} <br>
     Скорость: {$this->speed} <br>
     ";
+  }
+
+  public function __destruct()
+  {
+    var_dump($this);
   }
 
 }
