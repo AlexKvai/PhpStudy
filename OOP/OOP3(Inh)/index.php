@@ -15,5 +15,6 @@ debug($notebook);
 
 echo $book->getProduct();
 echo $notebook->getProduct();
-
+// var_dump($book->public);
+//echo $book->price;
 ?>
