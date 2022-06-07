@@ -1,6 +1,6 @@
 <?php
 error_reporting(-1);
-use app\{BookProduct, NotebookProduct};
+use app\{A,B, BookProduct, NotebookProduct};
 use PHPMailer\PHPMailer\PHPMailer;
 use wfm\interfaces\IGadget;
 
@@ -30,9 +30,26 @@ function offerCase(IGadget $product)
 $book = new BookProduct('Маша и медведь', 200, 50);
 $notebook = new NotebookProduct('Dell', 12000, 'Intel');
 
-debug($book);
-echo $book->getName();
+// debug($book);
+// debug($notebook);
+// echo $book->getName();
 
-$mail = new PHPMailer();
-debug($mail);
+
+// $mail = new PHPMailer();
+// debug($mail);
+
+$a = new A();
+$b = new B();
+
+$a->getTest();
+echo '<br>';
+$b->getTest();
+echo '<br>';
+$b->getTest2();
+echo '<br>';
+
+$book->doAction1()->doAction2();
+
+//debug($book);
+
 ?>

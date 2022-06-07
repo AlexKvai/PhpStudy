@@ -2,9 +2,13 @@
 namespace app; 
 use wfm\interfaces\IGadget;
 use wfm\Product;
+use wfm\traits\TColor;
+
 class NotebookProduct extends Product implements IGadget
 {
   public $cpu;
+  use TColor;
+
 
   public function __construct($name, $price, $cpu)
   {
