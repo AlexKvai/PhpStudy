@@ -1,6 +1,7 @@
 <?php 
-namespace classes;
-use classes\interfaces\I3D;
+namespace app;
+use wfm\interfaces\I3D;
+use wfm\Product;
 class BookProduct extends Product implements I3D
 {
   public $numPages;
