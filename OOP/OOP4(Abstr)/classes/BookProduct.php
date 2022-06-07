@@ -1,5 +1,6 @@
 <?php 
-require_once 'classes/I3D.php';
+namespace classes;
+use classes\interfaces\I3D;
 class BookProduct extends Product implements I3D
 {
   public $numPages;

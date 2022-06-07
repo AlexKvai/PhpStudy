@@ -1,4 +1,5 @@
 <?php 
+namespace classes;
 abstract class Product 
 {
   public $name;

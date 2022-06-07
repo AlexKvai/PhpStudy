@@ -1,8 +1,8 @@
-<?php 
-require_once 'IGadget.php';
+<?php
+namespace classes; 
+use classes\interfaces\IGadget;
 class NotebookProduct extends Product implements IGadget
 {
-  
   public $cpu;
 
   public function __construct($name, $price, $cpu)
