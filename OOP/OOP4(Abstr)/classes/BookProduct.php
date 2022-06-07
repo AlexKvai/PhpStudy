@@ -10,7 +10,6 @@ class BookProduct extends Product implements I3D
     parent::__construct($name, $price);
     $this->numPages = $numPages;
     $this->setDiscount(5);
-    var_dump(self::TEST); // Переопределять константу из интерфейса нельзя, из класса - можно
   }
 
   public function getProduct()
@@ -36,7 +35,6 @@ class BookProduct extends Product implements I3D
 
   public function test()
   {
-    var_dump(self::TEST2);
   }
 
 }
