@@ -1,9 +1,10 @@
 <?php
 namespace app;
 
-class B extends A
-{
+use wfm\traits\TSingleton;
 
-  const TEST = 'Class B';
+class B 
+{
+  use TSingleton;
 
 }

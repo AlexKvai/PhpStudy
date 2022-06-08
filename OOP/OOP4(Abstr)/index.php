@@ -55,4 +55,12 @@ $notebook = new NotebookProduct('Dell', 12000, 'Intel');
 echo $book->discount ;
 // echo $book->getProduct();
 debug($book);
+$a = A::getInstanse();
+$a2 = A::getInstanse();
+$b = B::getInstanse();
+$b2 = B::getInstanse();
+var_dump($a);
+var_dump($a2);
+var_dump($b);
+var_dump($b2);
 ?>
