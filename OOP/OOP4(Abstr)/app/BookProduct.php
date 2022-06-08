@@ -17,6 +17,21 @@ class BookProduct extends Product implements I3D
     $this->setDiscount(5);
   }
 
+  public function __get($name)
+  {
+    var_dump($name);
+    $name = ucfirst($name);
+    echo $method = "get{$name}";
+    if(method_exists($this, $method)) {
+      return $this->$method();
+    }
+
+  }
+  public function __set($name, $value)
+  {
+    // var_dump($name, $value);
+    return;
+  }
   public function getProduct()
   {
     $out = parent ::getProduct();
@@ -24,6 +39,11 @@ class BookProduct extends Product implements I3D
     $out .= "Количество страниц: {$this->numPages}<br>";
     $out .= "Скидка: {$this->getDiscount()}%<br>";
     return $out;
+  }
+
+  public function __toString()
+  {
+    return $this->getProduct();
   }
 
   public function getNumPages()

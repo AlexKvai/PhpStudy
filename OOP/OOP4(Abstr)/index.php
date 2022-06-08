@@ -38,18 +38,21 @@ $notebook = new NotebookProduct('Dell', 12000, 'Intel');
 // $mail = new PHPMailer();
 // debug($mail);
 
-$a = new A();
-$b = new B();
+// $a = new A();
+// $b = new B();
 
-$a->getTest();
-echo '<br>';
-$b->getTest();
-echo '<br>';
-$b->getTest2();
-echo '<br>';
+// $a->getTest();
+// echo '<br>';
+// $b->getTest();
+// echo '<br>';
+// $b->getTest2();
+// echo '<br>';
 
-$book->doAction1()->doAction2();
+// $book->doAction1()->doAction2();
 
 //debug($book);
-
+// $book->test = 'hello';
+echo $book->discount ;
+// echo $book->getProduct();
+debug($book);
 ?>
